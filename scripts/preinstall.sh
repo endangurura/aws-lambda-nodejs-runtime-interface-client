@@ -86,6 +86,7 @@ else
             make install
     )
 
+    :'
     (
         # Build aws-lambda-cpp
         mkdir -p ./aws-lambda-cpp-$AWS_LAMBDA_CPP_RELEASE/build && \
@@ -97,4 +98,5 @@ else
                 -DCMAKE_MODULE_PATH="$ARTIFACTS_DIR"/lib/pkgconfig && \
             make && make install
     )
+    '
 fi
