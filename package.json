@@ -24,8 +24,7 @@
     "test:unit": "mocha --recursive ./test/unit  --reporter ./test/util/StdoutReporter.test",
     "test:coverage": "nyc npm run test:unit",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
-    "precommit": "npm run lint && npm run format:test",
-    "prepush": "npm run lint && npm run test"
+    "precommit": "npm run lint && npm run format:test"
   },
   "author": "AWS Lambda",
   "license": "Apache-2.0",
