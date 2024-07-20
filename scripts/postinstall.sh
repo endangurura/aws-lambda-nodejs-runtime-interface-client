@@ -7,7 +7,6 @@ if [ "$(uname)" = "Darwin" ]; then
 else
     npm run build:gyp
     mkdir -p dist
-    npm run build
     cp build/Release/rapid-client.node dist/
 fi
 
@@ -24,8 +23,8 @@ if test "${current_path#*$node_modules_path}" != "$current_path" || [ "$BUILD" !
     build_path="$current_path/../build"
 
     # Clean up source dependencies
-    # rm -rf "$deps_path"/aws-lambda-cpp*[^gz]
-    # rm -rf "$deps_path"/curl*[^gz]
-    # rm -rf "$deps_path"/artifacts
-    # rm -rf "$build_path"
+    rm -rf "$deps_path"/aws-lambda-cpp*[^gz]
+    rm -rf "$deps_path"/curl*[^gz]
+    rm -rf "$deps_path"/artifacts
+    rm -rf "$build_path"
 fi
