@@ -7,6 +7,7 @@ if [ "$(uname)" = "Darwin" ]; then
 else
     npm run build:gyp
     mkdir -p dist
+    npm run build
     cp build/Release/rapid-client.node dist/
 fi
 
