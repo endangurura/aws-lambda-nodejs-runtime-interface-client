@@ -88,8 +88,14 @@ else
     
     (
         # Build aws-lambda-cpp
-        mkdir -p ./aws-lambda-cpp-$AWS_LAMBDA_CPP_RELEASE/build && \
-            cd ./aws-lambda-cpp-$AWS_LAMBDA_CPP_RELEASE/build
+        ## mkdir -p ./aws-lambda-cpp-$AWS_LAMBDA_CPP_RELEASE/build && \
+        ##   cd ./aws-lambda-cpp-$AWS_LAMBDA_CPP_RELEASE/build
+        apk add --virtual builders git g++ make cmake unzip libtool curl-dev automake && \
+        apk add --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main/ libexecinfo-dev && \
+        git clone --depth 1 https://github.com/endangurura/aws-lambda-cpp.git && \
+        cd aws-lambda-cpp && \
+        mkdir build && \
+        cd build && \
     
         $CMAKE .. \
                 -DCMAKE_CXX_FLAGS="-fPIC" \
