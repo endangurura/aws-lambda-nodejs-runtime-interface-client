@@ -5,9 +5,9 @@ set -e
 if [ "$(uname)" = "Darwin" ]; then
     echo "aws-lambda-cpp does not build on OS X. Skipping the postinstall step."
 else
-   npm run build:gyp
-   mkdir -p dist
-   cp build/Release/rapid-client.node dist/
+    npm run build:gyp
+    mkdir -p dist
+    cp build/Release/rapid-client.node dist/
 fi
 
 # If the path of this file ends in "node_modules/aws-lambda-ric/scripts"
@@ -26,5 +26,5 @@ if test "${current_path#*$node_modules_path}" != "$current_path" || [ "$BUILD" !
     rm -rf "$deps_path"/aws-lambda-cpp*[^gz]
     rm -rf "$deps_path"/curl*[^gz]
     rm -rf "$deps_path"/artifacts
-    rm -rf "$build_path"
+    # rm -rf "$build_path"
 fi
