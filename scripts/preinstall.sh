@@ -101,7 +101,8 @@ else
                 -DCMAKE_CXX_FLAGS="-fPIC" \
                 -DCMAKE_INSTALL_PREFIX="$ARTIFACTS_DIR" \
                 -DCMAKE_MODULE_PATH="$ARTIFACTS_DIR"/lib/pkgconfig && \
-            make && make install
+            make && make install && \
+            apk del builders
     )
     
 fi
