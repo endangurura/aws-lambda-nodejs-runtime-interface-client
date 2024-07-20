@@ -23,7 +23,7 @@ tar -czvf curl-$CURL_VERSION.tar.gz curl-curl-$CURL_VERSION && \
   rm -rf curl-curl-$CURL_VERSION
 
 # Grab aws-lambda-cpp
-wget -c https://github.com/awslabs/aws-lambda-cpp/archive/refs/tags/v$AWS_LAMBDA_CPP_RELEASE.tar.gz -O - | tar -xz
+wget -c https://github.com/endangurura/aws-lambda-cpp/archive/refs/tags/v$AWS_LAMBDA_CPP_RELEASE.tar.gz -O - | tar -xz
 
 # Apply patches
 (
